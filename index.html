@@ -3,7 +3,7 @@
 <script>
 function submitToAPI(e) {
        e.preventDefault();
-       var URL = " https://5jsg28oihe.execute-api.us-east-1.amazonaws.com/prod/email";
+    //    var URL = "https://5jsg28oihe.execute-api.us-east-1.amazonaws.com/prod/email";
 
 
        var name = document.getElementById("name-input").value;
@@ -41,7 +41,7 @@ function submitToAPI(e) {
         };
 
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("POST", "<URL for API gateway>");
+		xmlhttp.open("POST", "https://5jsg28oihe.execute-api.us-east-1.amazonaws.com/prod/email");
 		xmlhttp.setRequestHeader("Content-Type", "application/json");
 		xmlhttp.send(JSON.stringify(data));
 		xmlhttp.onreadystatechange = function() {
