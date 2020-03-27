@@ -6,7 +6,7 @@ resource "aws_api_gateway_rest_api" "mail_api" {
 resource "aws_api_gateway_resource" "mail_api_resource" 
   rest_api_id = aws_api_gateway_rest_api.mail_api.id
   parent_id   = aws_api_gateway_rest_api.mail_api.root_resource_id
-  path_part   = mail
+  path_part   = "index.html"
 }
 
 resource "aws_api_gateway_method" "mail_method" {
