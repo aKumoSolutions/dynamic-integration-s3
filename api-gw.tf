@@ -1,6 +1,9 @@
 resource "aws_api_gateway_rest_api" "mail_api" {
   name        = var.api_name
   description = "This API is for trigger lamnda"
+  endpoint_configuration {
+      types = [ "REGIONAL"]
+  }
 }
 
 resource "aws_api_gateway_resource" "mail_api_resource" {
@@ -33,3 +36,5 @@ resource "aws_api_gateway_integration" "integration" {
   type                    = "AWS_PROXY"
   uri                     = aws_lambda_function.mail_lambda.invoke_arn
 }
+
+# curl -i -X POST -H "Content-Type: application/json" -d "{\"name\":\"khuslentuguldur\"}" https://d1stdw02be.execute-api.us-west-2.amazonaws.com/prod/email
