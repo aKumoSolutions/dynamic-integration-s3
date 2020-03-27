@@ -19,7 +19,7 @@ resource "aws_api_gateway_method" "mail_method" {
 #   stage_name    = "prod"
 #   rest_api_id   = aws_api_gateway_rest_api.mail_api.id
 #   deployment_id = aws_api_gateway_deployment.mail_deployment.id
-}
+# }
 resource "aws_api_gateway_deployment" "mail_deployment" {
   depends_on  = ["aws_api_gateway_integration.integration"]
   rest_api_id   = aws_api_gateway_rest_api.mail_api.id
