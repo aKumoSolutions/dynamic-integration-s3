@@ -10,3 +10,4 @@ resource "aws_lambda_function" "mail_lambda" {
   source_code_hash = base64sha256(file(mail_nodejs.zip))
 
   runtime = var.runtime
+}
