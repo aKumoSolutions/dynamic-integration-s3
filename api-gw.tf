@@ -6,7 +6,7 @@ resource "aws_api_gateway_rest_api" "mail_api" {
 resource "aws_api_gateway_resource" "mail_api_resource" {
   rest_api_id = aws_api_gateway_rest_api.mail_api.id
   parent_id   = aws_api_gateway_rest_api.mail_api.root_resource_id
-  path_part   = "index.html"
+  path_part   = "email"
 }
 
 resource "aws_api_gateway_method" "mail_method" {
@@ -15,10 +15,10 @@ resource "aws_api_gateway_method" "mail_method" {
   http_method   = "POST"
   authorization = "NONE"
 }
-resource "aws_api_gateway_stage" "mail_stage" {
-  stage_name    = "prod"
-  rest_api_id   = aws_api_gateway_rest_api.mail_api.id
-  deployment_id = aws_api_gateway_deployment.mail_deployment.id
+# resource "aws_api_gateway_stage" "mail_stage" {
+#   stage_name    = "prod"
+#   rest_api_id   = aws_api_gateway_rest_api.mail_api.id
+#   deployment_id = aws_api_gateway_deployment.mail_deployment.id
 }
 resource "aws_api_gateway_deployment" "mail_deployment" {
   depends_on  = ["aws_api_gateway_integration.integration"]
