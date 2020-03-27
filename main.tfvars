@@ -1,6 +1,6 @@
-  filename      = "mail_nodejs.zip"
+  filename      = "index.zip"
   function_name = "mail_lambda"
-  handler       = "handler.test"
+  handler       = "handler.mail"
   runtime = "nodejs12.x"
   email = "khuslen.cyber@gmail.com"
   api_name = "mail_api"
